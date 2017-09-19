@@ -1,0 +1,61 @@
+﻿@model FilmProject.Models.Film
+
+@{
+    ViewBag.Title = Html.DisplayFor(model => model.Name);
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+@using Microsoft.AspNet.Identity;
+
+<h2>
+    @Model.Name
+</h2 > 
+
+<div>
+    <hr />
+    <div class="floatdiv">
+        @{
+            string imgSrc = String.Empty;
+            if (Model.Picture != null)
+            {
+                var base64 = Convert.ToBase64String(Model.Picture);
+                imgSrc = String.Format("data:image/gif;base64,{0}", base64);
+            }
+        }
+        <img class="largeImage" src="@imgSrc" />
+    </div>
+    <div>
+        <table class="table table-hover">
+            <tr>
+                <td>
+                    Год
+                </td>
+                <td>
+                    @Html.DisplayFor(model => model.Year)
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    Режиссер
+                </td>
+                <td>
+                    @Html.DisplayFor(model => model.Director)
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    Описание
+                </td>
+                <td>
+                    @Html.DisplayFor(model => model.Description)
+                </td>
+            </tr>
+        </table>  
+    </div>
+
+</div>
+<p>
+    @if (Model.UserId == User.Identity.GetUserId())
+    {
+        @Html.ActionLink("Редактировать фильм", "Edit", new { id = Model.FilmId })
+    }
+</p>

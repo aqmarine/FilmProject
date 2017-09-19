@@ -22,3 +22,52 @@ select,
 textarea {
     max-width: 280px;
 }
+
+.smallImage{
+    height: 150px;
+    width: 120px;
+    border: solid 2px brown;
+}
+.largeImage {
+    width: 250px;
+    height: 350px;
+    border: solid 2px brown;
+    float: left;
+}
+
+.newFilm{
+    margin: 20px 20px 20px 20px;
+    font: 14px;
+}
+.table{
+    width: 600px;
+    margin: 10px auto;
+}
+    .table td.text {
+        max-width: 400px;
+        
+    }
+
+    .table td.text span {
+        text-indent: 15px;
+        margin: 10px;
+        overflow: hidden;
+        display: -webkit-box;
+        -webkit-line-clamp: 5;
+        -webkit-box-orient: vertical;
+        
+        text-align: justify;
+        text-overflow: ellipsis;
+        
+    }
+
+.div.image {
+    float: left;
+}
+
+
+
+.floatdiv {
+    float: right;
+    margin: 7px 7px 7px 0;
+}
